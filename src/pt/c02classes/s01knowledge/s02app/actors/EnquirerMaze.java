@@ -33,6 +33,7 @@ public class EnquirerMaze implements IEnquirer
 			
 			// ateh encontrar a saida
 			String resposta;
+			
 			do
 			{
 				resposta = responder.ask(atual.getDirecao()); // pergunta ao responder

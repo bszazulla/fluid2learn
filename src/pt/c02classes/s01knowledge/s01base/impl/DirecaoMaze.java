@@ -29,6 +29,7 @@ public class DirecaoMaze
 		}		
 	}
 	
+	
 	public String getDirecao()
 	{
 		return direcao;
