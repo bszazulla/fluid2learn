@@ -9,6 +9,7 @@ public class DirecaoMaze
 	{
 		this.direcao = "leste";
 		
+		// aqui ele sabe de onde veio
 		switch (dirUltimo)
 		{
 		case "leste":
@@ -54,9 +55,6 @@ public class DirecaoMaze
 			break;
 		case "sul":
 			this.direcao = "leste";
-			break;
-		default:
-			this.direcao = "nao ha caminho aqui";
 			break;
 		}
 	}
