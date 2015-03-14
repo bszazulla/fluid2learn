@@ -79,7 +79,6 @@ public class EnquirerMaze implements IEnquirer
 		else
 			System.out.println("Fuém fuém fuém!");
 		
-		
 		return true;
 	}
 	
