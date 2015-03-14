@@ -23,7 +23,7 @@ public class EnquirerMaze implements IEnquirer
 		// de onde veio
 		String dirUltimo;
 		
-		// pilha - DirecaoMaze eh a nova classe (dps eu tiro esses comentarios, eh mais pra vc, Gabriel, entender mais rapido agr haha)
+		// pilha
 		Stack<DirecaoMaze> pilha = new Stack<DirecaoMaze>();
 		
 		while (!acao.equalsIgnoreCase("F")) 
