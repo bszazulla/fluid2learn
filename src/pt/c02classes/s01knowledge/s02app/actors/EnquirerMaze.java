@@ -11,6 +11,7 @@ public class EnquirerMaze implements IEnquirer
 
 	IResponder responder;
 	
+	// conexão com o responder
 	public void connect(IResponder responder) 
 	{
 		this.responder = responder;

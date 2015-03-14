@@ -29,17 +29,19 @@ public class DirecaoMaze
 		}		
 	}
 	
-	
+	// capta a direção do objeto
 	public String getDirecao()
 	{
 		return direcao;
 	}
 	
+	// capta o ultimo movimento
 	public String getVeioDe()
 	{
 		return veioDe;
 	}
 	
+	// muda a direção em ordem
 	public void mudaDirecao()
 	{
 		switch (direcao) 
@@ -62,6 +64,7 @@ public class DirecaoMaze
 		}
 	}
 	
+	// testa se estah voltando de onde veio
 	public boolean voltando() 
 	{
 		if(this.direcao == this.veioDe)
@@ -69,5 +72,4 @@ public class DirecaoMaze
 		
 		return false;
 	}
-		
 }
