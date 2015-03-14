@@ -35,36 +35,42 @@ public class EnquirerMaze implements IEnquirer
 			String resposta;
 			do
 			{
-				resposta = responder.ask(atual.getDirecao());
+				resposta = responder.ask(atual.getDirecao()); // pergunta ao responder
 				
 				if (resposta == "passagem" || resposta == "saida") 
 				{
-					// verifica se nao esta voltando sem necessidade
-					if(!atual.voltando())
-					{
-						responder.move(atual.getDirecao());
-						
-						pilha.push(atual); // coloca na pilha
-						System.out.println("Movimento para " + atual.getDirecao());
-						
-						DirecaoMaze aux = pilha.peek(); // ultimo local passado
-						dirUltimo = aux.getDirecao(); // captura a direcao do ultimo local passado
+					responder.move(atual.getDirecao());
 					
-						atual = new DirecaoMaze(dirUltimo); // novo objeto	
+					if (!pilha.empty())
+					{
+						DirecaoMaze aux = pilha.peek(); // ultimo local passado
+						dirUltimo = aux.getDirecao(); // captura a direcao do ultimo local passado para usar em veioDe						
 					}
+					else
+						dirUltimo = "null"; // estah na entrada do labirinto e pilha vazia
+					
+					pilha.push(atual); // coloca na pilha
+					System.out.println("Movimento para " + atual.getDirecao());
+			
+					atual = new DirecaoMaze(dirUltimo); // novo objeto apontado por atual = nova tentativa de movimento
 				} 
 				else
 				{
 					atual.mudaDirecao(); // muda a tentativa de movimento
 					
-					// se nao ha caminho aqui e tem que voltar para um ponto anterior
-					if(atual.getDirecao().equalsIgnoreCase("nao ha caminho aqui"))
+					// se só sobra voltar de onde veio agora (caminho fechado) - aqui deve estar o problema
+					if(atual.voltando()) // atual voltando eh um metodo que testa o veioDe, se eh igual a pra onde vai (direção)
 					{
-						pilha.push(atual);						
-						atual = pilha.peek(); 
-					}
+						
+						pilha.pop(); // retira da pilha			
+						
+						// volta a apontar atual para o que estah no topo da pilha (ele eh capaz de fazer isso em java?)
+						atual = pilha.peek(); //toma a ultima direção, apontando para o que estah no topo da pilha
+						atual.mudaDirecao(); //e jah muda, pq pela direção atual sabe-se que não dah
+					}	
 				}
 			} while (resposta != "saida");
+			
 			
 			// pergunta se estah na saida e pode terminar o programa
 			if (responder.ask("aqui") == "saida") 
