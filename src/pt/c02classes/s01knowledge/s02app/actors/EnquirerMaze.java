@@ -23,7 +23,7 @@ public class EnquirerMaze implements IEnquirer
 		// de onde veio
 		String dirUltimo;
 		
-		// pilha
+		// pilha 
 		Stack<DirecaoMaze> pilha = new Stack<DirecaoMaze>();
 		
 		while (!acao.equalsIgnoreCase("F")) 

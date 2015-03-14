@@ -9,7 +9,7 @@ public class DirecaoMaze
 	{
 		this.direcao = "leste";
 		
-		switch (dirUltimo)
+		switch (dirUltimo) 
 		{
 		case "leste":
 			this.veioDe = "oeste";
