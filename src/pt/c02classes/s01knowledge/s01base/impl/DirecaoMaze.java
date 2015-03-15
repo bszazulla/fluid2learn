@@ -2,12 +2,13 @@ package pt.c02classes.s01knowledge.s01base.impl;
 
 public class DirecaoMaze
 {
-	private String direcao, veioDe;
+	private String direcao, veioDe, dirUltimo;
 	
 	// construtor inicializando a sequencia de direções testadas e de onde veio
 	public DirecaoMaze(String dirUltimo)
 	{
 		this.direcao = "leste";
+		this.dirUltimo = dirUltimo;
 		
 		switch (dirUltimo) 
 		{
@@ -29,6 +30,7 @@ public class DirecaoMaze
 		}		
 	}
 	
+	
 	// capta a direção do objeto
 	public String getDirecao()
 	{
@@ -39,6 +41,34 @@ public class DirecaoMaze
 	public String getVeioDe()
 	{
 		return veioDe;
+	}
+	
+	public void setVeioDe(String dirUltimo)
+	{
+		switch (dirUltimo) 
+		{
+		case "leste":
+			this.veioDe = "oeste";
+			break;
+		case "oeste":
+			this.veioDe = "leste";
+			break;
+		case "norte":
+			this.veioDe = "sul";
+			break;
+		case "sul":
+			this.veioDe = "norte";
+			break;
+		case "null":
+			this.veioDe = null;
+			break;
+		}
+	}
+	
+	// capta a direção para qual o ultimo foi
+	public String getDirUltimo()
+	{
+		return dirUltimo;
 	}
 	
 	// muda a direção em ordem
@@ -58,9 +88,6 @@ public class DirecaoMaze
 		case "sul":
 			this.direcao = "leste";
 			break;
-		default:
-			this.direcao = "nao ha caminho aqui";
-			break;
 		}
 	}
 	
@@ -72,4 +99,6 @@ public class DirecaoMaze
 		
 		return false;
 	}
+	
+
 }
