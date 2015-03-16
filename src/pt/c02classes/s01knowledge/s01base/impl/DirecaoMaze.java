@@ -7,7 +7,27 @@ public class DirecaoMaze
 	// construtor inicializando a sequencia de direções testadas e de onde veio
 	public DirecaoMaze(String dirUltimo)
 	{
-		this.direcao = "leste";
+		
+		switch (dirUltimo) 
+		{
+		case "leste":
+			this.direcao = "sul";
+			break;
+		case "oeste":
+			this.direcao = "norte";
+			break;
+		case "norte":
+			this.direcao = "leste";
+			break;
+		case "sul":
+			this.direcao = "oeste";
+			break;
+		case "null":
+			this.direcao = "leste";
+			break;
+		}	
+		
+		
 		this.dirUltimo = dirUltimo;
 		
 		switch (dirUltimo) 
@@ -30,7 +50,6 @@ public class DirecaoMaze
 		}		
 	}
 	
-	
 	// capta a direção do objeto
 	public String getDirecao()
 	{
@@ -41,28 +60,6 @@ public class DirecaoMaze
 	public String getVeioDe()
 	{
 		return veioDe;
-	}
-	
-	public void setVeioDe(String dirUltimo)
-	{
-		switch (dirUltimo) 
-		{
-		case "leste":
-			this.veioDe = "oeste";
-			break;
-		case "oeste":
-			this.veioDe = "leste";
-			break;
-		case "norte":
-			this.veioDe = "sul";
-			break;
-		case "sul":
-			this.veioDe = "norte";
-			break;
-		case "null":
-			this.veioDe = null;
-			break;
-		}
 	}
 	
 	// capta a direção para qual o ultimo foi

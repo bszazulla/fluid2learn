@@ -39,56 +39,43 @@ public class EnquirerMaze implements IEnquirer
 			{
 				resposta = responder.ask(atual.getDirecao()); // pergunta ao responder
 				
-				if (resposta == "passagem" || resposta == "saida") 
+				// passagem ou saida
+				if (resposta.equalsIgnoreCase("passagem")|| resposta.equalsIgnoreCase("saida")) 
 				{
-					
-					if(!atual.voltando()) // se não volta sem necessidade
+					if(atual.voltando()) 
 					{
-						System.out.println("Movimento para " + atual.getDirecao());
+						responder.move(atual.getVeioDe()); // volta
+						System.out.println("Movimento para " + atual.getVeioDe());
 						
+						atual = pilha.pop();
+						atual.mudaDirecao();
+					}
+					else 
+					{
 						responder.move(atual.getDirecao()); // responder move
+						System.out.println("Movimento para " + atual.getDirecao());
 						
 						pilha.push(atual); // coloca na pilha
 						
 						if (!pilha.empty())
-						{
-							DirecaoMaze aux = pilha.peek(); // ultimo local passado
-							dirUltimo = aux.getDirecao(); // captura a direcao do ultimo local passado para usar em veioDe						
-						}
+							dirUltimo = pilha.peek().getDirecao(); // ultima direção escolhida
 						else
 							dirUltimo = "null"; // estah na entrada do labirinto e pilha vazia
 						
 						atual = new DirecaoMaze(dirUltimo); // novo objeto apontado por atual = nova tentativa de movimento
 					}
-					else
-						atual.mudaDirecao();
 				} 
+				// parede
 				else
-				{
 					atual.mudaDirecao(); // muda a tentativa de movimento
-					
-					// se só sobra voltar de onde veio agora (caminho fechado) - aqui deve estar o problema
-					if(atual.voltando()) // atual voltando eh um metodo que testa o veioDe, se eh igual a pra onde vai (direção)
-					{
-						pilha.pop(); // retira da pilha	
-					
-						atual = pilha.peek(); //toma a ultima direção, apontando para o que estah no topo da pilha
-					
-						atual.setVeioDe(atual.getDirecao());
-					
-						atual.mudaDirecao(); //e jah muda, pq pela direção atual sabe-se que não dah
-					}	
-				}
 				
-			} while (resposta != "saida");
-			
+			} while (!resposta.equalsIgnoreCase("saida"));
 			
 			// pergunta se estah na saida e pode terminar o programa
 			if (responder.ask("aqui") == "saida") 
 			{
 				acao = "F";
 			}
-			
 		}
 		
 		if (responder.finalAnswer("cheguei"))
