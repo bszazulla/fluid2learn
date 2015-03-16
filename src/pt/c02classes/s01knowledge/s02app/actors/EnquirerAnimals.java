@@ -22,6 +22,7 @@ public class EnquirerAnimals implements IEnquirer {
 	public boolean discover() 
 	{
 		IBaseConhecimento bc = new BaseConhecimento();
+		bc.setScenario("animals");
         String listaAnimais[] = bc.listaNomes();
         String atual = null;
 
