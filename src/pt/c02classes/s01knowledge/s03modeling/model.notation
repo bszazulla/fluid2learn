@@ -230,9 +230,12 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1_84Fc46EeSw8Y-bzhyphg"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_1_84Fs46EeSw8Y-bzhyphg" type="7018">
-        <children xmi:type="notation:Shape" xmi:id="_f1nz4M_7EeS2P-FQq5smSA" type="3013">
-          <element xmi:type="uml:Operation" href="model.uml#_fwp0UM_7EeS2P-FQq5smSA"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_f1nz4c_7EeS2P-FQq5smSA"/>
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6NaskNAzEeSJnu8xVlM6Xw" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6NbToNAzEeSJnu8xVlM6Xw" key="collapsed" value="true"/>
+        </eAnnotations>
+        <children xmi:type="notation:Shape" xmi:id="__7JrcNAzEeSJnu8xVlM6Xw" type="3013">
+          <element xmi:type="uml:Operation" href="model.uml#__6YPYNAzEeSJnu8xVlM6Xw"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="__7JrcdAzEeSJnu8xVlM6Xw"/>
         </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_1_84F846EeSw8Y-bzhyphg"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_1_84GM46EeSw8Y-bzhyphg"/>
