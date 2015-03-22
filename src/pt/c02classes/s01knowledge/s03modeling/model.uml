@@ -88,6 +88,9 @@
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_waGlsM5BEeSw8Y-bzhyphg" name="estatisticas" type="_hXOZMM49EeSw8Y-bzhyphg"/>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Wh058NDPEeS4trIeOqHEPA" name="ResponderAnimals">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_dhjFINDPEeS4trIeOqHEPA" name="estatisticas" type="_hXOZMM49EeSw8Y-bzhyphg"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_BdW6EM48EeSw8Y-bzhyphg" name="ResponderSphinx">
     <generalization xmi:type="uml:Generalization" xmi:id="_gNCpwNDJEeSPg43fRUlHUw" general="_1_7C4M46EeSw8Y-bzhyphg"/>
