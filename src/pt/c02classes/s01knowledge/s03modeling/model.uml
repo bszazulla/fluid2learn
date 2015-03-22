@@ -90,7 +90,16 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_BdW6EM48EeSw8Y-bzhyphg" name="ResponderSphinx">
-    <generalization xmi:type="uml:Generalization" xmi:id="_pv8iMM4-EeSw8Y-bzhyphg" general="_NSb8kM46EeSw8Y-bzhyphg"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_gNCpwNDJEeSPg43fRUlHUw" general="_1_7C4M46EeSw8Y-bzhyphg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_hKmeMNDJEeSPg43fRUlHUw" name="Sphinx"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pQYSgNDJEeSPg43fRUlHUw" name="setMapa" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3KzmANDJEeSPg43fRUlHUw" name="linhaAtual">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_84I8QNDJEeSPg43fRUlHUw" name="colunaAtual">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_hXOZMM49EeSw8Y-bzhyphg" name="IStatistics"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_LLevwM49EeSw8Y-bzhyphg">
